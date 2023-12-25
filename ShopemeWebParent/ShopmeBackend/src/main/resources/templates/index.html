@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Shopme Admin Control Panel</title>
+    <meta th:replace="fragments/head :: head">
+    <title>Home - Shopme Admin</title>
 </head>
 <body>
- <h1>Welcome to Admin Control Panel</h1>
+<div class="container-fluid">
+    <div th:replace="fragments/header :: header"></div>
+    <div><h2>Manage User</h2></div>
+    <div th:replace="fragments/footer :: footer"></div>
+</div>
 </body>
 </html>

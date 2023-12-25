@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta th:replace="fragments/head :: head">
+    <title>Users - Shopme Admin</title>
+</head>
+<body>
+
+<div class="container-fluid">
+
+
+    <div th:replace="fragments/header :: header"></div>
+
+    <div>
+        <h2>Manage User</h2>
+        <div class="container my-2">
+            <a th:href="@{/users/new}">
+                <button type="button" class="btn btn-secondary">Create new user</button>
+            </a>
+        </div>
+    </div>
+    <div th:if="${message != null}" class="alert alert-success text-center">
+        [[${message}]]
+    </div>
+    <div>
+        <table class="table table-hover table-striped table-bordered table-responsive-xl">
+            <thead>
+            <tr class="table-secondary">
+                <th>User ID</th>
+                <th>Photos</th>
+                <th>Email</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Roles</th>
+                <th>Enabled</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="user : ${listUsers}">
+                <td>[[${user.id}]]</td>
+                <td></td>
+                <td>[[${user.email}]]</td>
+                <td>[[${user.firstName}]]</td>
+                <td>[[${user.lastName}]]</td>
+                <td>[[${user.roles}]]</td>
+                <td>[[${user.enabled}]]</td>
+                <td>Edit &nbsp; Delete</td>
+            </tr>
+            </tbody>
+
+
+        </table>
+    </div>
+
+    <div th:replace="fragments/footer :: footer"></div>
+</div>
+</body>
+</html>
